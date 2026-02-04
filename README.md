@@ -1,112 +1,83 @@
-# Mall Customer Segmentation Project
-**COMP 9130 - Mini Project 3**
+# Mall Customer Segmentation
+## Overview
+This project segments mall customers using unsupervised learning to enable targeted marketing strategies. The analysis includes clustering, dimensionality reduction, and anomaly detection to discover customer patterns.
 
----
+## Problem Description and Motivation
+Shopping malls struggle with inefficient marketing when treating all customers the same. Different customer groups have different needs, spending habits, and preferences.
 
-## Problem Description
+### Key Challenges
+- **Segmentation**: Identifying distinct customer groups without labels
+- **Targeting**: Understanding what makes each segment unique
+- **Resource Allocation**: Focusing marketing budget on high-value customers
+- **Anomaly Detection**: Finding unusual customers (VIPs or potential issues)
 
-### Business Problem
-The mall wants to segment customers for targeted marketing instead of treating everyone the same.
+### Project Goals
+This project uses unsupervised learning to:
+1. Discover natural customer segments based on behavior
+2. Visualize high-dimensional customer data in 2D
+3. Identify unusual customers requiring special attention
+4. Provide actionable marketing recommendations for each segment
 
-### Why Unsupervised Learning?
-We don't have customer labels. Unsupervised learning finds natural groups, spots unusual customers, and shows hidden patterns.
-
----
+By analyzing demographics and spending patterns, we help malls make data-driven marketing decisions.
 
 ## Project Structure
-
 ```
 mini-project-3/
-├── data/Mall_Customers.csv
-├── analysis.ipynb
+├── analysis.ipynb                # Main analysis notebook
+├── data/
+│   └── Mall_Customers.csv        # Customer dataset
 ├── requirements.txt
 └── README.md
 ```
 
-## Dataset
+## Setup Instructions
 
-**Source:** [Kaggle Mall Customers](https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python)  
-**Size:** 200 customers, 5 features
-
-### Features
-- CustomerID: Unique ID (not used)
-- Gender: Male/Female
-- Age: 18-70 years
-- Annual Income (k$): Income in thousands
-- Spending Score (1-100): Mall rating of spending behavior
-
-### Preprocessing
-- Gender encoded (Male=0, Female=1)
-- Dropped CustomerID
-- Standardized all features with StandardScaler
-
----
-
-## Setup
-
-### Install
+### 1. Clone or Download the Project
 ```bash
-pip install numpy pandas matplotlib seaborn scikit-learn umap-learn jupyter
+cd /path/to/mini-project-3
 ```
 
-### Run
+### 2. Create Virtual Environment (Recommended)
+```bash
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+```
+
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Get the Dataset
+Download from [Kaggle](https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python) and place in `data/` folder.
+
+### 5. Run the Analysis
 ```bash
 jupyter notebook analysis.ipynb
 ```
+Run all cells sequentially.
 
----
+## Results Summary
 
-## Results
-
-### Optimal K: 5
-**Why:** K=5 (silhouette: 0.304) is more practical than K=10 (silhouette: 0.421). Five segments are manageable for marketing teams.
-
-### Customer Segments
-
-| # | Name | Size | Age | Income | Spending | Strategy |
-|---|------|------|-----|--------|----------|----------|
-| 0 | Young Premium | 39 | 33 | $86k | 82 | VIP programs |
-| 1 | Rich Low-Spenders | 29 | 37 | $90k | 18 | Find out why |
-| 2 | Mature Average | 43 | 50 | $49k | 40 | Loyalty deals |
-| 3 | Young Spenders | 54 | 25 | $40k | 61 | Payment plans |
-| 4 | Older Conservative | 35 | 56 | $54k | 37 | Senior discounts |
-
-### Anomalies: 10 found (5% contamination)
-
-**Types:**
-- **Frugal Rich (3):** High income but very low spending
-- **Elderly Minimal (6):** Older people who rarely shop
-- **Budget Youth (1):** Young with very low spending
-
-**Where:** Most in Cluster 1 (10.3%) and Cluster 4 (8.6%)
+### Customer Segments (K=5)
+| Segment | Size | Age | Income | Spending | Strategy |
+|---------|------|-----|--------|----------|----------|
+| Young Premium | 39 | 33 | $86k | 82 | VIP programs |
+| Rich Low-Spenders | 29 | 37 | $90k | 18 | Survey barriers |
+| Mature Average | 43 | 50 | $49k | 40 | Loyalty programs |
+| Young Spenders | 54 | 25 | $40k | 61 | Payment plans |
+| Older Conservative | 35 | 56 | $54k | 37 | Senior discounts |
 
 ### Key Findings
+- **Biggest Opportunity**: Cluster 1 (Rich Low-Spenders) - high income but minimal spending. Converting 15-20% could significantly boost revenue.
+- **Best Customers**: Clusters 0 and 3 - young and engaged. Focus retention here.
+- **Anomalies**: 10 detected (5%) - mostly frugal wealthy and elderly minimal shoppers, not errors.
 
-**Biggest Opportunity:** Cluster 1 has money but doesn't spend. Survey them to find out why. Could increase revenue 15-20%.
-
-**Best Customers:** Clusters 0 and 3 are young and engaged. Keep them happy for long-term success.
-
-**Anomalies:** Mostly real patterns (careful elderly, cautious rich) not data errors. Need special treatment.
-
----
+### Methods Used
+- **K-Means Clustering**: Optimal K=5 chosen balancing metrics and business practicality
+- **Dimensionality Reduction**: PCA, t-SNE, UMAP for visualization
+- **Anomaly Detection**: Isolation Forest with 5% contamination
 
 ## Team Contributions
-
-**[Your Name]:**
-- Data loading and preprocessing
-- K-means clustering
-- K selection and cluster analysis
-- README
-
-**[Partner Name]:**
-- PCA, t-SNE, UMAP
-- Anomaly detection
-- Integration analysis
-- Visualizations
-
----
-
-
-
-
-**Questions?** Contact [your-email]
+- Hsuan Chen Liu - 
+- Jia, Yansong - 
