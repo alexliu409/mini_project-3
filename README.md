@@ -22,7 +22,8 @@ A mall wants to understand its 200 customers better to create targeted marketing
 ## Project Structure
 ```
 mini-project-3/
-├── analysis.ipynb                # Main analysis notebook
+├── notebooks/
+│   └── analysis.ipynb               # Main analysis notebook
 ├── data/
 │   └── Mall_Customers.csv        # Customer dataset
 ├── requirements.txt
