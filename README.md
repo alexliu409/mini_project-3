@@ -77,6 +77,6 @@ The detected anomalies reveal two key business opportunities and risks. On one h
 - **Conclusion:** Data has non-linear structure (income-spending interactions are curved). t-SNE validates the 5 clusters are real, not statistical noise.
 
 ## Team Contributions
-- Hsuan Chen Liu - Data preprocessing, clustering, K selection, cluster analysis
-- Jia, Yansong - Dimensionality reduction, anomaly detection, visualizations, integration and analysis, final takeaway analysis
+- Hsuan Chen Liu - Data preprocessing, K selection, cluster analysis, Dimensionality reduction, Technical Report
+- Jia, Yansong - Anomaly detection, visualizations, integration and analysis, Technical Report
 
