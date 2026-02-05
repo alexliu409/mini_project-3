@@ -60,6 +60,12 @@ Put `Mall_Customers.csv` in the same folder as the notebook.
 | 3 | Young Spenders | 54 | 25 | $40k | 61 | Payment plans |
 | 4 | Older Conservative | 35 | 56 | $54k | 37 | Senior discounts |
 
+### Dimensionality Reduction
+
+- **PCA:** 57.1% variance captured (PC1: 32.2%, PC2: 25.0%), shows some cluster overlap
+- **t-SNE:** Much clearer cluster separation — confirms K=5 is solid
+- **Conclusion:** Data has non-linear structure (income-spending interactions are curved). t-SNE validates the 5 clusters are real, not statistical noise.
+
 ### Anomalies: 
 10 anomalies detected with contamination=0.05, categorized into 3 types:
 -**Low Spenders with Average/High Income:** High income but very low spending, possibly frugal high-earners or new customers
@@ -70,11 +76,6 @@ Put `Mall_Customers.csv` in the same folder as the notebook.
 The customer segmentation results provide clear guidance for targeted marketing strategies. Cluster 0 (high-income, high-spending young customers) is the core high-value group and should be prioritized for premium product promotions and loyalty programs. Cluster 1 (high-income, low-spending customers) has great potential for upselling, and personalized marketing campaigns can be designed to stimulate their consumption. Cluster 3 (young, low-income, medium-spending customers) is suitable for affordable and trendy product recommendations.
 The detected anomalies reveal two key business opportunities and risks. On one hand, the high-income but low-spending anomalies can be targeted with exclusive offers to convert them into regular high-spenders. On the other hand, the elderly low-spending anomalies may need tailored services such as convenient shopping channels to improve their engagement. Additionally, these anomalies can also help identify potential data errors or fraudulent transactions, enhancing the mall's operational risk management.
 
-### Dimensionality Reduction
-
-- **PCA:** 57.1% variance captured (PC1: 32.2%, PC2: 25.0%), shows some cluster overlap
-- **t-SNE:** Much clearer cluster separation — confirms K=5 is solid
-- **Conclusion:** Data has non-linear structure (income-spending interactions are curved). t-SNE validates the 5 clusters are real, not statistical noise.
 
 ## Team Contributions
 - Hsuan Chen Liu - Data preprocessing, K selection, cluster analysis, Dimensionality reduction, Technical Report
