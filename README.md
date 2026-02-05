@@ -22,8 +22,7 @@ A mall wants to understand its 200 customers better to create targeted marketing
 ## Project Structure
 ```
 mini-project-3/
-├── notebooks/
-│   └── analysis.ipynb               # Main analysis notebook
+├── analysis.ipynb                # Main analysis notebook
 ├── data/
 │   └── Mall_Customers.csv        # Customer dataset
 ├── requirements.txt
@@ -61,6 +60,16 @@ Put `Mall_Customers.csv` in the same folder as the notebook.
 | 3 | Young Spenders | 54 | 25 | $40k | 61 | Payment plans |
 | 4 | Older Conservative | 35 | 56 | $54k | 37 | Senior discounts |
 
+### Anomalies: 
+10 anomalies detected with contamination=0.05, categorized into 3 types:
+-**Low Spenders with Average/High Income:** High income but very low spending, possibly frugal high-earners or new customers
+-**Older, Very Low Spenders with Low/Average Income:** Elderly customers with low income and spending, likely minimalists or disengaged shoppers
+-**Younger, Low Spenders with Low Income:** Budget-conscious young shoppers with limited income
+
+### Business Insights:
+The customer segmentation results provide clear guidance for targeted marketing strategies. Cluster 0 (high-income, high-spending young customers) is the core high-value group and should be prioritized for premium product promotions and loyalty programs. Cluster 1 (high-income, low-spending customers) has great potential for upselling, and personalized marketing campaigns can be designed to stimulate their consumption. Cluster 3 (young, low-income, medium-spending customers) is suitable for affordable and trendy product recommendations.
+The detected anomalies reveal two key business opportunities and risks. On one hand, the high-income but low-spending anomalies can be targeted with exclusive offers to convert them into regular high-spenders. On the other hand, the elderly low-spending anomalies may need tailored services such as convenient shopping channels to improve their engagement. Additionally, these anomalies can also help identify potential data errors or fraudulent transactions, enhancing the mall's operational risk management.
+
 ### Dimensionality Reduction
 
 - **PCA:** 57.1% variance captured (PC1: 32.2%, PC2: 25.0%), shows some cluster overlap
@@ -69,5 +78,5 @@ Put `Mall_Customers.csv` in the same folder as the notebook.
 
 ## Team Contributions
 - Hsuan Chen Liu - Data preprocessing, clustering, K selection, cluster analysis
-- Jia, Yansong - Dimensionality reduction, anomaly detection, visualizations, integration
+- Jia, Yansong - Dimensionality reduction, anomaly detection, visualizations, integration and analysis, final takeaway analysis
 
